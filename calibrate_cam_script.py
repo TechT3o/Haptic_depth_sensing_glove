@@ -1,13 +1,22 @@
+"""
+Script that is used for camera calibration in order to find the camera intrinsic parameters.
+You need to print a charuco board pattern before using this.
+If you have already captured images with the charuco board set Use images to True and the images directory
+Also depending on your charuco bard set the pattern (columnsxrows) of blocks
+If you capture live video press a to accept a frame and e when you are ready to exit and get the parameters
+It is recommended taht at least 10 images are captured with different orientations of the charuco board.
+"""
+
 import cv2
 import numpy as np
 import cv2 as cv
-
 import os
 
-
+# Variables
 USE_IMAGES = False
 CAMERA_PICS_DIR = "checkboard_pics"
 CHECKBOARD_PATTERN = (8, 6)
+
 
 # termination criteria
 criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -71,4 +80,4 @@ for i in range(len(objpoints)):
  imgpoints2, _ = cv.projectPoints(objpoints[i], rvecs[i], tvecs[i], mtx, dist)
  error = cv.norm(imgpoints[i], imgpoints2, cv.NORM_L2)/len(imgpoints2)
  mean_error += error
-print( "total error: {}".format(mean_error/len(objpoints)) )
+print("total error: {}".format(mean_error/len(objpoints)) )
