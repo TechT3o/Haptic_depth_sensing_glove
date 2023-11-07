@@ -45,7 +45,7 @@ class Reconstruct3D:
         pcd = o3d.geometry.PointCloud()
         pcd.points = o3d.utility.Vector3dVector(point_cloud)
         down_pcd = pcd.voxel_down_sample(voxel_size=0.05)
-        # o3d.visualization.draw_geometries([downpcd])
+        o3d.visualization.draw_geometries([down_pcd])
         return down_pcd
 
     def live_point_cloud(self) -> None:
@@ -67,4 +67,7 @@ class Reconstruct3D:
 
 if __name__ == "__main__":
     reconstructor = Reconstruct3D()
-    reconstructor.live_point_cloud()
+    # reconstructor.live_point_cloud()
+    depth_map = np.load("depth.npy")
+    print(depth_map)
+    reconstructor.create_point_cloud(depth_map)

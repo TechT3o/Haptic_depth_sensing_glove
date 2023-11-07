@@ -6,8 +6,8 @@ import numpy as np
 
 class MonoDepthEstimator:
     def __init__(self):
-        self.processor = DPTImageProcessor.from_pretrained("Intel/dpt-hybrid-midas", low_cpu_mem_usage=True)
-        self.model = DPTForDepthEstimation.from_pretrained("Intel/dpt-hybrid-midas")
+        self.processor = DPTImageProcessor.from_pretrained("Intel/dpt-large", low_cpu_mem_usage=True)
+        self.model = DPTForDepthEstimation.from_pretrained("Intel/dpt-large")
         print(torch.cuda.is_available())
         self.computing_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model.to(self.computing_device)
@@ -48,10 +48,11 @@ class MonoDepthEstimator:
         :return: None
         """
 
-        video_capture = cv2.VideoCapture(0)
+        # video_capture = cv2.VideoCapture(0)
         print("Starting live capture. Press s to stop")
         while True:
-            ret, frame = video_capture.read()
+            ret, frame = self.video_capture.read()
+            frame = cv2.resize(frame, (640, 480))
 
             if not ret:
                 print("Camera not available")
@@ -68,10 +69,19 @@ class MonoDepthEstimator:
             if cv2.waitKey(1) == ord("s"):
                 break
 
-        video_capture.release()
+        self.close_video_cap()
         print("Stopped live capture.")
+
+    def close_video_cap(self) -> None:
+        """
+        Closes video capture object
+        :return: None
+        """
+        if self.video_capture.isOpened():
+            self.video_capture.release()
 
 
 if __name__ == "__main__":
+    # Tests capturing live depth
     depth_est = MonoDepthEstimator()
     depth_est.capture_live_depth(True)
