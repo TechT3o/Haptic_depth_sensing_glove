@@ -2,19 +2,79 @@
 
 ## 1. Motivation & Objective
 
-What are you trying to do and why? (plain English without jargon)
+About 284 million people are visually impaired (VI) worldwide and of these, 39 million of them are blind. Common problems that VI people face are the difficulty to navigate / find their way in the environment, lose objects that are missplaced on surfaces or identify and fetch objects around them that are further away from their grasp.
+
+In this project a haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them is built. The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map and perform sensory substituition of vision by using a high resolution haptic feedback gloved comprised of an array of mini DC motor disksto assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
+
+The goal is for the user to be able to identify what type of object their hand is pointing at for object recognition and object fetching and for the user to be able to do wayfinding and navigate in a room using the device. User studies that examine the usability and effectiveness of the device will be done.
 
 ## 2. State of the Art & Its Limitations
 
-How is it done today, and what are the limits of current practice?
+There are multiple different approaches that have been performed for sensory substitution of vision to aid VI people to perform multiple different tasks and with multiple different technologies.
+
+The tasks are:
+- Navigating a map
+- Wayfinding
+- Mental mapping
+- VR navigating
+- Fetching objects
+- Driving
+- Feeling 2D data
+
+And the technologies used vary and are:
+- Vibrotactile on mobile device
+- Smart walker
+- Belt
+- Smartphone
+- Drone
+- VR headset
+- Camera Bracelet
+- Smart Cane
+- Tactile wristband
+- Sonar array with vibrotactile motors
+- Resonating pin array
+- Glove with motors
+- Audio feedback
+- Tablet
+- Sleeve
+- Smartwatch
+
+The technologies that rely on audio feedback have the limitations of overloading the sensory channel and are slow to transmit the environment information to the user.
+Smartphones, tablets, canes, smartwatches, belts, wristbands and sleeves can transmit a limited amount of information and can't directly provide the 3d space information but require an encoding of this information that is difficult for the user to learn.
+Resonating pin arrays and sonar arrays require expensive, bulky and not portable equipment.
 
 ## 3. Novelty & Rationale
 
-What is new in your approach and why do you think it will be successful?
+Our proposed solution belongs to the family of gloves with motors and aims to tackle the problems of object fetching and wayfinding by allowing for cheap, portable, easy to learn, direct and low-latency feedback of the 3D space without sensory overload.
+
+The resources indicate that:
+- Relative depth information can be extracted from a mono camera using neural networks
+- Sensory substitution can be performed with vibrotactile motor arrays
+- Shapes, faces and objects can be recognized using motor arrays.
+
+Therefore, it should be feasible to combine this research and construct a haptic depth sensing glove that can perform sensory substitution and explore its effectiveness and usability.
+
 
 ## 4. Potential Impact
 
-If the project is successful, what difference will it make, both technically and broadly?
+### Technical Impact
+
+The technologies developed for this project will have technical impact since:
+- A haptic feedback device will be developed
+- The sensitivity and resolution of the human palm to vibrotactile feedback will be investigated
+- A real time mono camera depth estimation system that can be used by embedded devices will be developed
+
+  ### Broad impact
+
+  There are multiple applications for such a device and multiple people can benefit from it.
+  
+  Visually impaired people will now:
+  - have an alternative to navigate in new environments resulting in greater mobility and quality of life.
+  - have a way to recognize and fetch objects making them more self reliable and solving the problem of lost objects.
+
+  Therefore such a device could practicaly improve the quality of life of the visually impaired community, let them become more self reliable, to more easily navigate to new places and alleviate pressure from their caregivers.
+
+   With the rise of Virtual Reality headsets and Augmented Reality applications there is an active research field and need to develop ubiquitous haptic feedback devices to help a user interact with the virtual world. This glove could be used to address this need and provide feedback such as for button pressing or touching and recognizing virtual objects etc.
 
 ## 5. Challenges
 
@@ -24,7 +84,11 @@ If the project is successful, what difference will it make, both technically and
 
 ## 6. Requirements for Success
 
-What skills and resources are necessary to perform the project?
+- Python skills are required to make a running backend that can collect camera information, find the depth, and determine the mapping and intensities of the motors.
+- C++ skills are needed to program the Arduino to communicate with the Python backend, and to control the intensities of each motor.
+- Electronic circuit design and soldering skills are required to connect the motors and camera to microcontroller and to create the motor driver circuit and PCBs.
+- 3D printing adn design skills are required to print casing for electronic components.
+- Hands on skills are required to put the glove together.
 
 ## 7. Metrics of Success
 
@@ -68,8 +132,6 @@ Recognition speed - How much time to figure out an object?
 - Transmit camera data to PC
 - Optimize depth estimation pipeline (model, processing, depth to motor intensity conversion etc) to run in real time. ( What is the effect of different estimations per seconds on perceived accuracy?)
 
-
-
 ### Combine the two
 
 - Assemble glove.
@@ -81,7 +143,6 @@ Recognition speed - How much time to figure out an object?
 - Make glove wireless.
 - Make glove battery powered.
 - Try 3d reconstruction of space and handling VR objects
-
 
 ## 9. Related Work
 
@@ -95,7 +156,8 @@ List datasets that you have identified and plan to use. Provide references (with
 
 ### 9.c. Software
 
-List softwate that you have identified and plan to use. Provide references (with full citation in the References section below).
+Intel DPT-Large mono depth sensing model
+Eagle EDA
 
 ## 10. References
 
