@@ -119,23 +119,24 @@ Recognition speed - How much time to figure out an object?
 
 - Design motor driver circuit.
 - Design motor pcb.
-- Assemble motor pcbs
-- Check which array configuration is best ( How many motors in array, in which places to be placed, what kind of depth to intensity mapping)
-- Check if it is possible to understand the type of object using the sensor array. (we can use depth maps from other sources as well for testing this)
-- Figure depth resolution. ( Can you understand two objects being n meters apart from each other)
+- Assemble motor pcbs.
+- Check which array configuration is best ( How many motors in array, in which places to be placed, what kind of depth to intensity mapping).
+- Check if it is possible to understand the type of object using the sensor array. (we can use depth maps from other sources as well for testing this).
+- Figure depth resolution ( Can you understand two objects being n meters apart from each other).
 (These might all change depending on depth to intensity mapping, position of motors etc)
 
 ### Camera side
 
 - Find which camera to use.
 - Find where/ how it is convenient to place the camera.
-- Transmit camera data to PC
-- Optimize depth estimation pipeline (model, processing, depth to motor intensity conversion etc) to run in real time. ( What is the effect of different estimations per seconds on perceived accuracy?)
+- Transmit camera data to PC.
+- Optimize depth estimation pipeline (model, processing, depth to motor intensity conversion etc) to run in real time. ( What is the effect of different estimations per seconds on perceived accuracy?).
 
 ### Combine the two
 
+- 3D print cases / parts for mounting electronic components.
 - Assemble glove.
-- Transmit data serially (or wirelessly) between processing backend and haptic glove
+- Transmit data serially (or wirelessly) between processing backend and haptic glove.
 - Start user testing.
 
 ### Extension:
@@ -148,7 +149,157 @@ Recognition speed - How much time to figure out an object?
 
 ### 9.a. Papers
 
-List the key papers that you have identified relating to your project idea, and describe how they related to your project. Provide references (with full citation in the References section below).
+- SpaceSense: representing geographical information to visually impaired people using spatial tactile feedback.
+
+Related since it uses tactile feedback to transfer digital information to VI people.
+
+- Assistive locomotion device with haptic feedback for guiding visually impaired people.
+
+Other type of haptic feedback device used for wayfinding of VI people.
+
+- Safe local navigation for visually impaired users with a time-of-flight and haptic feedback device.
+
+Similar concept but uses time of flight sensor and doesn't use motor array.
+
+- Navigation for visually impaired using haptic feedback.
+
+Also explores using haptic feedback to transfer location information.
+
+- GuideCopter-A precise drone-based haptic guidance interface for blind or visually impaired people.
+
+Different haptic feedback technique for guiding VI people.
+
+- Haptic-feedback support for cognitive mapping of unknown spaces by people who are blind.
+
+Present a haptic feedback and the idea of mental mapping for blind people that is a potential applciaiton of our proposed solution 
+
+- Haptic rendering of visual data for the visually impaired.
+
+Related since it uses tactile feedback to transfer digital informaition to VI people.
+
+- A remote guidance system for blind and visually impaired people via vibrotactile haptic feedback.
+
+Also explores using vibrotactile haptic feedback to guide VI people.
+
+- Double-diamond model-based orientation guidance in wearable human–machine navigation systems for blind and visually impaired people.
+
+Explains other type of HCI for orientation guidance of VI people.
+
+- Smartphone navigation support for blind and visually impaired people-a comprehensive analysis of potentials and opportunities.
+
+Other type of navigation device for VI people.
+
+- A wearable system for mobility improvement of visually impaired people.
+
+Similar kind of system that improves mobility of VI people.
+
+- Evaluation of electronic haptic device for blind and visually impaired people: a case study.
+
+Summary paper explaining many uses of haptic devices to aid VI people.
+
+- PneuFetch: supporting blind and visually impaired people to fetch nearby objects via light haptic cues.
+
+A different approach to object fetching for VI people.
+
+- Spatial haptic orientation for visually impaired people.
+
+Similar approach of using haptic feedback for orientation for VI people.
+
+- Vibratory haptic feedback assistive device for visually-impaired drivers.
+
+Haptic feedback method for VI people even though addressed problem si driving
+
+- A wearable mobility aid for the visually impaired based on embedded 3D vision and deep learning.
+
+Similar concept of finding depth map with embedded devices even though different device type
+
+- An assistive navigation framework for the visually impaired.
+
+Other type of navigation for visually impaired people
+
+- Body Mounted Vision System for Visually Impaired Outdoor and Indoor Wayfinding Assistance.
+
+Other approach of wayfinding using body mounted components for VI people.
+
+- Robot-assisted wayfinding for the visually impaired in structured indoor environments.
+
+Other approach of wayfinding for VI people.
+
+- An indoor navigation aid for the visually impaired.
+
+Other type of navigation approach for VI people.
+
+- Sight-to-sound human-machine interface for guiding and navigating visually impaired people.
+
+Other type of sensory substitution system for aiding VI people.
+
+- NAVI–a proof-of-concept of a mobile navigational aid for visually impaired based on the microsoft kinect.
+
+Other type of using depth camera for navigation of VI people.
+
+- Navigation and space perception assistance for the visually impaired: The NAVIG project.
+
+Similar in the way that it explores navigation in space for VI people.
+
+- Wearable travel aid for environment perception and navigation of visually impaired people.
+
+Similar problem solved with different type of device.
+
+- Vision-based mobile indoor assistive navigation aid for blind people.
+
+Another use of vision for navigation for VI people.
+
+- F2T: a novel force-feedback haptic architecture delivering 2D data to visually impaired people.
+
+Related since it uses tactile feedback to transfer digital information to VI people.
+
+- Obstacle avoidance for blind people using a 3D camera and a haptic feedback sleeve.
+
+Similar concept but it uses a sleeve instead of a glove.
+
+- A haptic glove as a tactile-vision sensory substitution for wayfinding.
+
+Very similar paper as they also sue a glove based embedded system to do sensory substitution for wayfinding.
+
+- Providing haptic feedback using the kinect.
+
+Similar in that they use 3d maps and haptic feedback.
+
+- CamIO: a 3D computer vision system enabling audio/haptic interaction with physical objects by blind users.
+
+Related to extension of project for VR applications but the technology vision and haptic part of technology is similar.
+
+- Enhancing perception for the visually impaired with deep learning techniques and low-cost wearable sensors.
+
+Similar idea of using deep learning vision and low-cost wearable sensors.
+
+- A kinect based vibrotactile feedback system to assist the visually impaired.
+
+Similar project where they use depth map to provide tactile feedback.
+
+- Electrotactile and vibrotactile displays for sensory substitution systems.
+
+Checks effectiveness of a vibrotactile dispaly (similar to motor array) for sensory substitution. 
+
+- Vision Substitution with Object Detection and Vibrotactile Stimulus.
+
+Checks vision substitution system with vibrotactile motors.
+
+- Sensory substitution and the human–machine interface.
+
+Summary of sensory substitution in HCI.
+
+- Visually impaired users can locate and grasp objects under the guidance of computer vision and non-visual feedback.
+
+Similar concept of recognizing and fetching objects using computer vision. Different types of stimulus such as audio and tactile explored.
+
+- Vibrotactile feedback systems: Current trends in rehabilitation, sports and information display.
+
+Summary of uses of vibrotactile feedback systems.
+
+- Vibrotactile Data Physicalization: Exploratory Insights for Haptization of Low-resolution Images.
+
+Gives insights on understanding low res images using vibrotactile motors.
 
 ### 9.b. Datasets
 
@@ -157,6 +308,7 @@ List datasets that you have identified and plan to use. Provide references (with
 ### 9.c. Software
 
 Intel DPT-Large mono depth sensing model
+
 Eagle EDA
 
 ## 10. References
@@ -236,3 +388,7 @@ Eagle EDA
 [37](https://www.researchgate.net/publication/224586228_Vibrotactile_feedback_systems_Current_trends_in_rehabilitation_sports_and_information_display) Alahakone, A. U., & Senanayake, S. A. (2009, July). Vibrotactile feedback systems: Current trends in rehabilitation, sports and information display. In 2009 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (pp. 1148-1153). IEEE.
 
 [38](https://www.researchgate.net/publication/355410847_Vibrotactile_Data_Physicalization_Exploratory_Insights_for_Haptization_of_Low-resolution_Images) Bastidas Cuya, F. G., Martins Guarese, R. L., Johansson, C. G., Giambastiani, M., Iquiapaza, Y., de Jesus Oliveira, V. A., ... & Maciel, A. (2021, October). Vibrotactile Data Physicalization: Exploratory Insights for Haptization of Low-resolution Images. In Symposium on Virtual and Augmented Reality (pp. 84-91).
+
+[39](https://huggingface.co/Intel/dpt-large) Intel DPT-Large Mono depth estimator
+
+[40](https://www.autodesk.com/products/eagle/features) Eagle EDA
