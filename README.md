@@ -2,7 +2,7 @@
 
 Haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them.
 
-The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map and perform sensory substituition of vision by using a high resolution haptic feedback gloved comprised of an array of mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
+The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map and perform sensory substituition of vision by using a high resolution haptic feedback glove comprised of an array of vibrational mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
 
 The goal is for the user to be able to identify what type of object their hand is pointing at for object recognition and object fetching and for the user to be able to do wayfinding and navigate in a room using the device.
 
@@ -14,11 +14,11 @@ User studies that examine the usability (Learnability, Efficiency, Memorability,
 - 1x [OV7670 camera module](https://www.openhacks.com/uploadsproductos/ov7670_cmos_camera_module_revc_ds.pdf)
 - 20x [Mini motor disk](https://www.adafruit.com/product/1201#technical-details)
 - 20x [p2n222A npn transistor](https://www.onsemi.com/pdf/datasheet/p2n2222a-d.pdf)
-- 20x 30 Ohms resistors
-- 20x 2.2k Ohms resistors
-- 20x 33 pF capacitors
-- 20x 1N4001 diodes
-- 20x [motor circuit PCBs](https://github.com/TechT3o/Haptic_depth_sensing_glove/tree/main/PCB%20files)
+- 20x 30 Ohms resistor
+- 20x 2.2k Ohms resistor
+- 20x 33 pF capacitor
+- 20x 1N4001 diode
+- 20x [motor circuit PCB](https://github.com/TechT3o/Haptic_depth_sensing_glove/tree/main/PCB%20files)
 
 ## Motor driver circuit
 
@@ -28,7 +28,7 @@ The mini disk motors require around 100 mA of current in order to rotate at full
 
 *Figure 1: Motor driver circuit*
 
-The PCB of this circuit shown in Figure was made and the Gerber files were sent to [OSHPARK](https://oshpark.com/) for manufacturing.
+The PCB of this circuit shown in Figure 2 was made and the Gerber files were sent to [OSHPARK](https://oshpark.com/) for manufacturing.
 
 ![image](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/0849f1bc-9bf5-438c-accb-9387e1dbf27c)
 
@@ -52,6 +52,18 @@ In order to estimate the depth from a mono camera the vision transformer model D
 
 *Figure 5: Mono depth video example*
 
+## Intensity mapping
 
+The [IntensityMapper](https://github.com/TechT3o/Haptic_depth_sensing_glove/blob/main/intensity_mapper.py) class is responsible for getting the depth map and the positions of the motors on the glove and getting the PWM values by averaging the values around the corresponding pixel in the depth map.
 
+Todo: An investigation to fiure out the relation between PWM value and perceived strength on the human palm should be done.
+Todo: experiment with different averaging methods. (We want to prevent errors by one miscalculated pixel but want to still have resolution high)
+
+## Serial Communication
+
+The [serial communicator](https://github.com/TechT3o/Haptic_depth_sensing_glove/blob/main/serial_com.py) class is responnsible for connecting the Python backend serially to the Arduino and receiving the image data and transmitting the motor intensities.
+
+## Helper scripts
+
+The [camera calibration](https://github.com/TechT3o/Haptic_depth_sensing_glove/blob/main/calibrate_cam_script.py) script is used to obtain camera parameters such as the foundational matrix, the intrinsic and extrinsic parameters and the lens distortions to be used in the 3D reconstruction or in estimating the depth.
 
