@@ -9,11 +9,11 @@ The goal is for the user to be able to identify what type of object their hand i
 # Team
 
 * Theodoros Papaiakovou \#1 
-* Fatemah Arkan \#2
+* Fatemeh Arkannezhad \#2
 
 # Required Submissions
 
-* [Proposal](https://github.com/TechT3o/haptic_depth_sensing_glove/blob/main/docs/proposal.md)
+* [Proposal](proposal.md)
 * [Midterm Checkpoint Presentation Slides](http://)
 * [Final Presentation Slides](http://)
-* [Final Report](report)
+* [Final Report](report.md)
