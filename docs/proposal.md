@@ -2,15 +2,15 @@
 
 ## 1. Motivation & Objective
 
-About 284 million people are visually impaired (VI) worldwide and of these, 39 million of them are blind. Common problems that VI people face are the difficulty to navigate / find their way in the environment, lose objects that are missplaced on surfaces or identify and fetch objects around them that are further away from their grasp.
+About 284 million people are visually impaired (VI) worldwide and of these, 39 million of them are blind. Common problems that VI people face are the difficulty in navigating / finding their way in the environment, losing objects that are misplaced on surfaces, or identifying and fetching objects around them that are further away from their grasp.
 
-In this project a haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them is built. The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map and perform sensory substituition of vision by using a high resolution haptic feedback gloved comprised of an array of mini DC motor disksto assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
+In this project a haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3D space around them is built. The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map, and perform sensory substitution of vision by using a high-resolution haptic feedback glove comprised of an array of mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
 
 The goal is for the user to be able to identify what type of object their hand is pointing at for object recognition and object fetching and for the user to be able to do wayfinding and navigate in a room using the device. User studies that examine the usability and effectiveness of the device will be done.
 
 ## 2. State of the Art & Its Limitations
 
-There are multiple different approaches that have been performed for sensory substitution of vision to aid VI people to perform multiple different tasks and with multiple different technologies.
+There are multiple different approaches that have been performed for sensory substitution of vision to aid VI people in performing multiple different tasks and with multiple different technologies.
 
 The tasks are:
 - Navigating a map
@@ -22,7 +22,7 @@ The tasks are:
 - Feeling 2D data
 
 And the technologies used vary and are:
-- Vibrotactile on mobile device
+- Vibrotactile on a mobile device
 - Smart walker
 - Belt
 - Smartphone
@@ -39,9 +39,9 @@ And the technologies used vary and are:
 - Sleeve
 - Smartwatch
 
-The technologies that rely on audio feedback have the limitations of overloading the sensory channel and are slow to transmit the environment information to the user.
-Smartphones, tablets, canes, smartwatches, belts, wristbands and sleeves can transmit a limited amount of information and can't directly provide the 3d space information but require an encoding of this information that is difficult for the user to learn.
-Resonating pin arrays and sonar arrays require expensive, bulky and not portable equipment.
+The technologies that rely on audio feedback have the limitations of overloading the sensory channel and are slow to transmit environmental information to the user.
+Smartphones, tablets, canes, smartwatches, belts, wristbands, and sleeves can transmit a limited amount of information and can't directly provide the 3D space information but require an encoding of this information that is difficult for the user to learn.
+Resonating pin arrays and sonar arrays require expensive, bulky, and not portable equipment.
 
 ## 3. Novelty & Rationale
 
@@ -59,10 +59,10 @@ Therefore, it should be feasible to combine this research and construct a haptic
 
 ### Technical Impact
 
-The technologies developed for this project will have technical impact since:
+The technologies developed for this project will have a technical impact since:
 - A haptic feedback device will be developed
 - The sensitivity and resolution of the human palm to vibrotactile feedback will be investigated
-- A real time mono camera depth estimation system that can be used by embedded devices will be developed
+- A real-time mono camera depth estimation system that can be used by embedded devices will be developed
 
   ### Broad impact
 
@@ -70,36 +70,36 @@ The technologies developed for this project will have technical impact since:
   
   Visually impaired people will now:
   - have an alternative to navigate in new environments resulting in greater mobility and quality of life.
-  - have a way to recognize and fetch objects making them more self reliable and solving the problem of lost objects.
+  - have a way to recognize and fetch objects making them more self-reliant and solving the problem of lost objects.
 
-  Therefore such a device could practicaly improve the quality of life of the visually impaired community, let them become more self reliable, to more easily navigate to new places and alleviate pressure from their caregivers.
+  Therefore such a device could practically improve the quality of life of the visually impaired community, let them become more self-reliant, more easily navigate to new places, and alleviate pressure from their caregivers.
 
-   With the rise of Virtual Reality headsets and Augmented Reality applications there is an active research field and need to develop ubiquitous haptic feedback devices to help a user interact with the virtual world. This glove could be used to address this need and provide haptic feedback such as for button pressing or touching and recognizing virtual objects tasks frequently encountered in Human Computer Interaction.
+   With the rise of Virtual Reality headsets and Augmented Reality applications, there is an active research field and a need to develop ubiquitous haptic feedback devices to help a user interact with the virtual world. This glove could be used to address this need and provide haptic feedback such as for button pressing or touching and recognizing virtual objects tasks frequently encountered in Human-Computer Interaction.
 
 ## 5. Challenges
 
 - Achieving depth estimation with good enough resolution to understand relative distances between camera objects
-- Achieve real time performance so that there is no latency between where the user is pointing at and the perceived haptic feedback
-- Achieve good enough haptic resolution with the motor array for the user to recognize different object and perform wayfinding
+- Achieve real-time performance so that there is no latency between where the user is pointing and the perceived haptic feedback
+- Achieve good enough haptic resolution with the motor array for the user to recognize different objects and perform wayfinding
 
 ## 6. Requirements for Success
 
 - Python skills are required to make a running backend that can collect camera information, find the depth, and determine the mapping and intensities of the motors.
 - C++ skills are needed to program the Arduino to communicate with the Python backend, and to control the intensities of each motor.
-- Electronic circuit design and soldering skills are required to connect the motors and camera to microcontroller and to create the motor driver circuit and PCBs.
+- Electronic circuit design and soldering skills are required to connect the motors and camera to the microcontroller and to create the motor driver circuit and PCBs.
 - 3D printing and design skills are required to print casing for electronic components.
-- Hands on skills are required to put the glove together.
+- Hands-on skills are required to put the glove together.
 
 ## 7. Metrics of Success
 
 ### Quantitative
 
 #### Wayfinding / navigation study
-Navigation accuracy - Able to navigate room?
-Navigation speed - How much time to reach destination?
+Navigation accuracy - Able to navigate in the room?
+Navigation speed - How much time to reach the destination?
 
 #### Object recognition / fetching study
-Recognition accuracy - How many objects detected? 
+Recognition accuracy - How many objects were detected? 
 Recognition speed - How much time to figure out an object?
 
 ### Qualitative
@@ -119,30 +119,30 @@ Recognition speed - How much time to figure out an object?
 
 - Design motor driver circuit.
 - Design motor pcb.
-- Assemble motor pcbs.
-- Check which array configuration is best ( How many motors in array, in which places to be placed, what kind of depth to intensity mapping).
+- Assemble motor PCBs.
+- Check which array configuration is best ( How many motors are in an array, in which places to be placed, what kind of depth to intensity mapping).
 - Check if it is possible to understand the type of object using the sensor array. (we can use depth maps from other sources as well for testing this).
 - Figure depth resolution ( Can you understand two objects being n meters apart from each other).
-(These might all change depending on depth to intensity mapping, position of motors etc)
+(These might all change depending on depth to intensity mapping, the position of motors etc)
 
 ### Camera side
 
 - Find which camera to use.
 - Find where/ how it is convenient to place the camera.
 - Transmit camera data to PC.
-- Optimize depth estimation pipeline (model, processing, depth to motor intensity conversion etc) to run in real time. (What is the effect of different estimations per seconds on perceived accuracy?).
+- Optimize depth estimation pipeline (model, processing, depth to motor intensity conversion etc) to run in real time. (What is the effect of different estimations per second on perceived accuracy?).
 
 ### Combine the two
 
 - 3D print cases / parts for mounting electronic components.
-- Assemble glove.
-- Transmit data serially (or wirelessly) between processing backend and haptic glove.
+- Assemble the glove.
+- Transmit data serially (or wirelessly) between the processing backend and haptic glove.
 - Start user testing.
 
 ### Extension:
 
 - Make glove wireless.
-- Make glove battery powered.
+- Make glove battery-powered.
 - Try 3d reconstruction of space and handling VR objects
 
 ## 9. Related Work
@@ -155,27 +155,27 @@ Related since it uses tactile feedback to transfer digital information to VI peo
 
 - Assistive locomotion device with haptic feedback for guiding visually impaired people.
 
-Other type of haptic feedback device used for wayfinding of VI people.
+Another type of haptic feedback device is used for wayfinding of VI people.
 
 - Safe local navigation for visually impaired users with a time-of-flight and haptic feedback device.
 
-Similar concept but uses time of flight sensor and doesn't use motor array.
+Similar concept but uses the time of flight sensor and doesn't use a motor array.
 
-- Navigation for visually impaired using haptic feedback.
+- Navigation for the visually impaired using haptic feedback.
 
 Also explores using haptic feedback to transfer location information.
 
 - GuideCopter-A precise drone-based haptic guidance interface for blind or visually impaired people.
 
-Different haptic feedback technique for guiding VI people.
+Different haptic feedback techniques for guiding VI people.
 
 - Haptic-feedback support for cognitive mapping of unknown spaces by people who are blind.
 
-Present a haptic feedback and the idea of mental mapping for blind people that is a potential applciaiton of our proposed solution 
+Present haptic feedback and the idea of mental mapping for blind people that is a potential application of our proposed solution 
 
 - Haptic rendering of visual data for the visually impaired.
 
-Related since it uses tactile feedback to transfer digital informaition to VI people.
+Related since it uses tactile feedback to transfer digital information to VI people.
 
 - A remote guidance system for blind and visually impaired people via vibrotactile haptic feedback.
 
@@ -183,15 +183,15 @@ Also explores using vibrotactile haptic feedback to guide VI people.
 
 - Double-diamond model-based orientation guidance in wearable human–machine navigation systems for blind and visually impaired people.
 
-Explains other type of HCI for orientation guidance of VI people.
+Explains other types of HCI for orientation guidance of VI people.
 
 - Smartphone navigation support for blind and visually impaired people-a comprehensive analysis of potentials and opportunities.
 
-Other type of navigation device for VI people.
+Other types of navigation devices for VI people.
 
 - A wearable system for mobility improvement of visually impaired people.
 
-Similar kind of system that improves mobility of VI people.
+Similar kind of system improves the mobility of VI people.
 
 - Evaluation of electronic haptic device for blind and visually impaired people: a case study.
 
@@ -207,35 +207,35 @@ Similar approach of using haptic feedback for orientation for VI people.
 
 - Vibratory haptic feedback assistive device for visually-impaired drivers.
 
-Haptic feedback method for VI people even though addressed problem si driving
+Haptic feedback method for VI people even though the addressed problem is driving
 
 - A wearable mobility aid for the visually impaired based on embedded 3D vision and deep learning.
 
-Similar concept of finding depth map with embedded devices even though different device type
+Similar to the concept of finding depth map with embedded devices even though different device type
 
 - An assistive navigation framework for the visually impaired.
 
-Other type of navigation for visually impaired people
+Other types of navigation for visually impaired people
 
 - Body Mounted Vision System for Visually Impaired Outdoor and Indoor Wayfinding Assistance.
 
-Other approach of wayfinding using body mounted components for VI people.
+Other approaches of wayfinding using body mounted components for VI people.
 
 - Robot-assisted wayfinding for the visually impaired in structured indoor environments.
 
-Other approach of wayfinding for VI people.
+Other approaches of wayfinding for VI people.
 
 - An indoor navigation aid for the visually impaired.
 
-Other type of navigation approach for VI people.
+Other types of navigation approach for VI people.
 
 - Sight-to-sound human-machine interface for guiding and navigating visually impaired people.
 
-Other type of sensory substitution system for aiding VI people.
+Other types of sensory substitution systems for aiding VI people.
 
-- NAVI–a proof-of-concept of a mobile navigational aid for visually impaired based on the microsoft kinect.
+- NAVI–a proof-of-concept of a mobile navigational aid for the visually impaired based on the Microsoft Kinect.
 
-Other type of using depth camera for navigation of VI people.
+Other types of using depth cameras for the navigation of VI people.
 
 - Navigation and space perception assistance for the visually impaired: The NAVIG project.
 
@@ -243,7 +243,7 @@ Similar in the way that it explores navigation in space for VI people.
 
 - Wearable travel aid for environment perception and navigation of visually impaired people.
 
-Similar problem solved with different type of device.
+Similar problems are solved with different types of devices.
 
 - Vision-based mobile indoor assistive navigation aid for blind people.
 
@@ -259,27 +259,27 @@ Similar concept but it uses a sleeve instead of a glove.
 
 - A haptic glove as a tactile-vision sensory substitution for wayfinding.
 
-Very similar paper as they also sue a glove based embedded system to do sensory substitution for wayfinding.
+Very similar paper as they also use a glove-based embedded system to do sensory substitution for wayfinding.
 
-- Providing haptic feedback using the kinect.
+- Providing haptic feedback using the Kinect.
 
 Similar in that they use 3d maps and haptic feedback.
 
 - CamIO: a 3D computer vision system enabling audio/haptic interaction with physical objects by blind users.
 
-Related to extension of project for VR applications but the technology vision and haptic part of technology is similar.
+Related to the extension of the project for VR applications, but the technology vision and haptic part of technology are similar.
 
 - Enhancing perception for the visually impaired with deep learning techniques and low-cost wearable sensors.
 
 Similar idea of using deep learning vision and low-cost wearable sensors.
 
-- A kinect based vibrotactile feedback system to assist the visually impaired.
+- A Kinect-based vibrotactile feedback system to assist the visually impaired.
 
 Similar project where they use depth map to provide tactile feedback.
 
 - Electrotactile and vibrotactile displays for sensory substitution systems.
 
-Checks effectiveness of a vibrotactile dispaly (similar to motor array) for sensory substitution. 
+Checks the effectiveness of a vibrotactile display (similar to a motor array) for sensory substitution. 
 
 - Vision Substitution with Object Detection and Vibrotactile Stimulus.
 
@@ -293,13 +293,13 @@ Summary of sensory substitution in HCI.
 
 Similar concept of recognizing and fetching objects using computer vision. Different types of stimulus such as audio and tactile explored.
 
-- Vibrotactile feedback systems: Current trends in rehabilitation, sports and information display.
+- Vibrotactile feedback systems: Current trends in rehabilitation, sports, and information display.
 
 Summary of uses of vibrotactile feedback systems.
 
 - Vibrotactile Data Physicalization: Exploratory Insights for Haptization of Low-resolution Images.
 
-Gives insights on understanding low res images using vibrotactile motors.
+Gives insights on understanding low-resolution images using vibrotactile motors.
 
 ### 9.b. Datasets
 
