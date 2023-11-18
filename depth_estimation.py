@@ -1,7 +1,8 @@
-from transformers import DPTImageProcessor, DPTForDepthEstimation, GLPNFeatureExtractor, GLPNForDepthEstimation
+from transformers import DPTImageProcessor, DPTForDepthEstimation
 import torch
 import cv2
 import numpy as np
+from typing import Tuple
 
 
 class MonoDepthEstimator:
@@ -71,6 +72,13 @@ class MonoDepthEstimator:
 
         self.close_video_cap()
         print("Stopped live capture.")
+
+    def grab_frame(self) -> Tuple[bool, np.ndarray]:
+        """
+        Grabs current frame from video capture device
+        :return: ret: bool value if frame is valid, frame: numpy array image captured
+        """
+        return self.video_capture.read()
 
     def close_video_cap(self) -> None:
         """

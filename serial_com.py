@@ -1,31 +1,20 @@
-import numpy as np
 import serial
 import time
 import serial.tools.list_ports
 
 
 class SerialCom:
-    def __init__(self):
-        self.arduino_port = "COM8"
+    def __init__(self, com_port: str = "COM8"):
+        self.com_port = com_port
         self.baud_rate = 9600
 
         try:
-            self.ser = serial.Serial(port=self.arduino_port, baudrate=self.baud_rate, timeout=1)
+            self.ser = serial.Serial(port=self.com_port, baudrate=self.baud_rate, timeout=1)
             time.sleep(2)
         except serial.serialutil.SerialException:
             print("Error: Microcontroller not connected or specified port not available.")
         except Exception as e:
             print(f"An error occurred: {e}")
-
-    def receive_img(self) -> np.ndarray:
-        """
-        Received image from microcontroller
-        :return: received image
-        """
-        #TODO: create code that receives image
-        print("Image received")
-        received_img = np.zeros(3, 3)
-        return received_img
 
     def send_intensities(self, intensities: str) -> None:
         """
