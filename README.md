@@ -2,7 +2,7 @@
 
 Haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them.
 
-The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map and perform sensory substituition of vision by using a high resolution haptic feedback glove comprised of an array of vibrational mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
+The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map, and perform sensory substitution of vision by using a high-resolution haptic feedback glove comprised of an array of vibrational mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is.
 
 The goal is for the user to be able to identify what type of object their hand is pointing at for object recognition and object fetching and for the user to be able to do wayfinding and navigate in a room using the device.
 
@@ -22,7 +22,7 @@ User studies that examine the usability (Learnability, Efficiency, Memorability,
 
 ## Motor driver circuit
 
-The mini disk motors require around 100 mA of current in order to rotate at full speed with 5V power. The Arduino output pins can provide up to 10 mA, therefore we need a driver circuit to be able to power the motor using a PWM signal. The circuit shown in Figure 1 was build. It uses an npn transistor whose base is connected to the GPIO output pin of the Arduino. When the PWM signal gets applied to the base of the transistor the Collector Emitter channel opens and current from the VCC flows through the disk motor and makes it spin with intensity analogous to the PWM signal. The resistor R2 limits the current flowing through the disk motor. A value of 30 Ohms was selected as 5V/30 = 166 mA max current that could flow through R2 ignoring rest of circuit resistances. R1 was selected to limit the base current. As the base current is very small values of up to 5k could be selected but the chosen value for R1 in this project was 2.2k Ohms. The capacitor is used to soften voltage spikes from power supply and suppress electrical noise from the motor's rotation and a diode is put to protect against back EMF.
+The mini disk motors require around 100 mA of current in order to rotate at full speed with 5V power. The Arduino output pins can provide up to 10 mA, therefore we need a driver circuit to be able to power the motor using a PWM signal. The circuit shown in Figure 1 was built. It uses an NPN transistor whose base is connected to the GPIO output pin of the Arduino. When the PWM signal gets applied to the base of the transistor the Collector Emitter channel opens and current from the VCC flows through the disk motor and makes it spin with intensity analogous to the PWM signal. The resistor R2 limits the current flowing through the disk motor. A value of 30 Ohms was selected as 5V/30 = 166 mA max current that could flow through R2 ignoring rest of the circuit resistances. R1 was selected to limit the base current. As the base current is very small values of up to 5k could be selected but the chosen value for R1 in this project was 2.2k Ohms. The capacitor is used to soften voltage spikes from the power supply and suppress electrical noise from the motor's rotation and a diode is put to protect against back EMF.
 
 ![image](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/c52ca1bd-b7f3-442d-acfb-adf6d63f25e5)
 
@@ -43,6 +43,14 @@ The received PCBs arrived and the components were soldered on top of it with the
 ![assembled_pcbs](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/4977230c-6801-469e-8884-8b859b470c98)
 
 *Figure 4: Soldered circuits*
+
+## Camera
+In this part of the project, we need a camera to capture images for the input of our model. We considered three potential options for the cameras compatible with Arduino Nano 33 BLE: OV7670, ArduCAM Mini, and Raspberry Pi Camera Module which use I2C, I2C, and CSI as the communication protocol respectively. 
+
+The OV7670 Camera is a low-voltage CMOS device designed to offer the complete functionality of a single-chip VGA camera and image processor. The image array captures incoming light, and following signal processing, the analog signal undergoes conversion into a digital signal through an A/D converter. Subsequently, this digital signal is accessible for reading from the data bus.
+
+We chose this camera since there exists a library for Arduino to read the data from it. We capture images, send them through the serial port, and convert them to PNG in two Python programs. However, the latency of taking a single image of 176 × 144 is about 6 seconds which is not ideal for our use-case.    
+
 
 ## Depth Estimation
 
