@@ -26,6 +26,14 @@ This section should cover the following items:
 # 2. Related Work
 
 # 3. Technical Approach
+The design of our glove encompasses two fundamental aspects: the mechanical and hardware components. 
+
+In focusing on the mechanical aspect, placing multiple vibration motors at precise locations on the glove, and aligning them with the skin's sensitivity on the palm was the taken approach to optimize the user experience. The objective is to create a sense of realistic feedback for the user, therefore the number of vibration motors is maximized.
+Moreover, the design needs the integration of two circuits, each serving a distinct function. One circuit is dedicated to providing instructions to the vibration motors, orchestrating dynamic feedback. The other circuit is responsible for supplying the power to drive the motors, ensuring a consistent user experience.
+Considering the wiring challenges associated with such a setup, we designed a PCB (Printed Circuit Board) to connect the motors and their drivers. This PCB serves as the central hub, connecting the vibration motors and their corresponding drivers.
+The location of the camera was another dilemma in our design consideration. As originally intended, it was supposed to be connected to the user's body. However, by relocating the camera to the palm, we eliminated the need to determine the depth relative to the hand, thereby simplifying the entire system. Placing the camera on the palm allows for a more natural interaction with the environment.
+
+From the electronic perspective, the vibrating mini motors that we are using for haptic feedback demand approximately 100 mA of current to achieve optimal rotation at 5V power. Given that the processor’s output pins cannot supply this current, a dedicated driver circuit is essential for powering the motor through a PWM (Pulse Width Modulation) signal. Therefore, we are using NPN transistors with bases connected to the processor pins functioning as a dynamic voltage-controlled current source, to supply the necessary current for motors to work in their optimal operational range. A PWM signal modulates the current supplied to the motors through this configuration, enabling the processor to control the transistors. In addition to meeting the motor's power requirements, this also provides us with haptic feedback because it gives us control over the motor's power.
 
 # 4. Evaluation and Results
 
