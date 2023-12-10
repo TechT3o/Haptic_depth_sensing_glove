@@ -13,7 +13,7 @@ Provide a brief overview of the project objectives, approach, and results.
 
 # 1. Introduction
 
-** Motivation & Objective:**
+Motivation & Objective:
 Globally, there are approximately 284 million people in the visually impaired (VI) community with 39 million among them facing blindness. Navigational difficulties, locating misplaced items, and accessing objects beyond their immediate reach are common challenges a visually impaired encounters.
 Findings show a critical consideration in the design and development of technologies for visually impaired individuals. The preference of VI people in the adoption of such devices depends on factors like affordability, portability, and integration into existing devices.
 - Cost-Effective Solutions: expensive devices are a barrier to widespread technology and a balance between functionality and affordability makes them accessible to a broader range of population.
@@ -24,10 +24,10 @@ Users express a particular interest in solutions that can be integrated directly
 
 ** State of the Art & Its Limitations:** How is it done today, and what are the limits of current practice?
 
-** Novelty & Rationale:** 
+Novelty & Rationale:
 A new component of this system is employing an affordable yet high-resolution haptic feedback device, that translates the depth map into an interactive experience. The device achieves this by assigning distinct intensities corresponding to the proximity of objects in the user's field of view. Imagine the user extending their hand toward an object; the haptic feedback device responds by delivering sensations via vibrating, aiming to help the user feel the object's closeness through touch.
 
-** Potential Impact:** //If the project is successful, what difference will it make, both technically and broadly?
+Potential Impact: //If the project is successful, what difference will it make, both technically and broadly?
 In practical terms, as the visually impaired user points their hand in a specific direction, the haptic feedback device modulates its output, allowing the user to estimate the object's distance. This approach enhances the user's spatial awareness, offering a dynamic understanding of the surrounding environment.
 Taking advantage of the combination of stereo camera technology and advanced haptic feedback, this solution enables visually impaired individuals to navigate independently and interact more effectively.
 
