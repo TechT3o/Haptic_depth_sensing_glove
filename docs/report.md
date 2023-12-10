@@ -22,12 +22,12 @@ Findings show a critical consideration in the design and development of technolo
 Users express a particular interest in solutions that can be integrated directly into their smartphones. This is convenient, as individuals are more likely to carry these items regularly.
 - User-Friendly: Visually impaired individuals prefer devices that are easy to operate and do not require complex instructions or learning processes. 
 
-*** State of the Art & Its Limitations:** How is it done today, and what are the limits of current practice?
-*** Novelty & Rationale:** What is new in your approach and why do you think it will be successful?
-*** Potential Impact:** If the project is successful, what difference will it make, both technically and broadly?
-*** Challenges:** What are the challenges and risks?
-*** Requirements for Success:** What skills and resources are necessary to perform the project?
-*** Metrics of Success:** What are metrics by which you would check for success?
+** State of the Art & Its Limitations:** How is it done today, and what are the limits of current practice?
+** Novelty & Rationale:** What is new in your approach and why do you think it will be successful?
+** Potential Impact:** If the project is successful, what difference will it make, both technically and broadly?
+** Challenges:** What are the challenges and risks?
+** Requirements for Success:** What skills and resources are necessary to perform the project?
+** Metrics of Success:** What are metrics by which you would check for success?
 
 
 
