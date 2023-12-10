@@ -13,7 +13,7 @@ Provide a brief overview of the project objectives, approach, and results.
 
 # 1. Introduction
 
-* Motivation & Objective:
+*** Motivation & Objective:**
 Globally, there are approximately 284 million people in the visually impaired (VI) community with 39 million among them facing blindness. Navigational difficulties, locating misplaced items, and accessing objects beyond their immediate reach are common challenges a visually impaired encounters.
 Findings show a critical consideration in the design and development of technologies for visually impaired individuals. The preference of VI people in the adoption of such devices depends on factors like affordability, portability, and integration into existing devices.
 - Cost-Effective Solutions: expensive devices are a barrier to widespread technology and a balance between functionality and affordability makes them accessible to a broader range of population.
@@ -22,12 +22,12 @@ Findings show a critical consideration in the design and development of technolo
 Users express a particular interest in solutions that can be integrated directly into their smartphones. This is convenient, as individuals are more likely to carry these items regularly.
 - User-Friendly: Visually impaired individuals prefer devices that are easy to operate and do not require complex instructions or learning processes. 
 
-* State of the Art & Its Limitations: How is it done today, and what are the limits of current practice?
-* Novelty & Rationale: What is new in your approach and why do you think it will be successful?
-* Potential Impact: If the project is successful, what difference will it make, both technically and broadly?
-* Challenges: What are the challenges and risks?
-* Requirements for Success: What skills and resources are necessary to perform the project?
-* Metrics of Success: What are metrics by which you would check for success?
+*** State of the Art & Its Limitations:** How is it done today, and what are the limits of current practice?
+*** Novelty & Rationale:** What is new in your approach and why do you think it will be successful?
+*** Potential Impact:** If the project is successful, what difference will it make, both technically and broadly?
+*** Challenges:** What are the challenges and risks?
+*** Requirements for Success:** What skills and resources are necessary to perform the project?
+*** Metrics of Success:** What are metrics by which you would check for success?
 
 
 
@@ -48,5 +48,9 @@ From the electronic perspective, the vibrating mini motors that we are using for
 # 4. Evaluation and Results
 
 # 5. Discussion and Conclusions
+Introducing the technology concept: a camera system with neural network enhancement designed to generate a precise 3D depth map, coupled with a haptic feedback device. This device is specifically designed to help visually impaired individuals, enabling them to better comprehend and navigate their surrounding 3D space.
+
+The fundamental idea involves attaching a camera to the palms of the visually impaired user. This camera captures the environment and constructs a detailed depth map, providing a representation of the spatial dimensions. The main challenge is to convey this information properly to the user through an interface.
+
 
 # 6. References
