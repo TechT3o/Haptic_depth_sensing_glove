@@ -9,19 +9,29 @@
 
 # Abstract
 
-Provide a brief overview of the project objhectives, approach, and results.
+Provide a brief overview of the project objectives, approach, and results.
 
 # 1. Introduction
 
-This section should cover the following items:
+* Motivation & Objective:
+Globally, there are approximately 284 million people in the visually impaired (VI) community with 39 million among them facing blindness. Navigational difficulties, locating misplaced items, and accessing objects beyond their immediate reach are common challenges a visually impaired encounters.
+Findings show a critical consideration in the design and development of technologies for visually impaired individuals. The preference of VI people in the adoption of such devices depends on factors like affordability, portability, and integration into existing devices.
+- Cost-Effective Solutions: expensive devices are a barrier to widespread technology and a balance between functionality and affordability makes them accessible to a broader range of population.
+- Lightweight Design: Users have a better experience with devices that are lightweight as heavy gadgets are impractical for everyday use. Designs that prioritize simplicity align with the need for easy-to-carry solutions.
+- Integration with Existing Tools: A notable preference is for devices that integrate with tools visually impaired individuals already use, such as canes, guide dogs, or smartphones. Rather than introducing standalone devices, the goal is to enhance existing aids, ensuring that users are able to use new technologies without additional effort or requiring any adjustment.
+Users express a particular interest in solutions that can be integrated directly into their smartphones. This is convenient, as individuals are more likely to carry these items regularly.
+- User-Friendly: Visually impaired individuals prefer devices that are easy to operate and do not require complex instructions or learning processes. 
 
-* Motivation & Objective: What are you trying to do and why? (plain English without jargon)
 * State of the Art & Its Limitations: How is it done today, and what are the limits of current practice?
 * Novelty & Rationale: What is new in your approach and why do you think it will be successful?
 * Potential Impact: If the project is successful, what difference will it make, both technically and broadly?
 * Challenges: What are the challenges and risks?
 * Requirements for Success: What skills and resources are necessary to perform the project?
 * Metrics of Success: What are metrics by which you would check for success?
+
+
+
+
 
 # 2. Related Work
 
