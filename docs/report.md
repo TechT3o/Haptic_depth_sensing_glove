@@ -23,17 +23,25 @@ Users express a particular interest in solutions that can be integrated directly
 - User-Friendly: Visually impaired individuals prefer devices that are easy to operate and do not require complex instructions or learning processes. 
 
 ** State of the Art & Its Limitations:** How is it done today, and what are the limits of current practice?
-** Novelty & Rationale:** What is new in your approach and why do you think it will be successful?
-** Potential Impact:** If the project is successful, what difference will it make, both technically and broadly?
+
+** Novelty & Rationale:** 
+A new component of this system is employing an affordable yet high-resolution haptic feedback device, that translates the depth map into an interactive experience. The device achieves this by assigning distinct intensities corresponding to the proximity of objects in the user's field of view. Imagine the user extending their hand toward an object; the haptic feedback device responds by delivering sensations via vibrating, aiming to help the user feel the object's closeness through touch.
+
+** Potential Impact:** //If the project is successful, what difference will it make, both technically and broadly?
+In practical terms, as the visually impaired user points their hand in a specific direction, the haptic feedback device modulates its output, allowing the user to estimate the object's distance. This approach enhances the user's spatial awareness, offering a dynamic understanding of the surrounding environment.
+Taking advantage of the combination of stereo camera technology and advanced haptic feedback, this solution enables visually impaired individuals to navigate independently and interact more effectively.
+
 ** Challenges:** What are the challenges and risks?
+
 ** Requirements for Success:** What skills and resources are necessary to perform the project?
+
 ** Metrics of Success:** What are metrics by which you would check for success?
 
 
 
-
-
 # 2. Related Work
+
+
 
 # 3. Technical Approach
 The design of our glove encompasses two fundamental aspects: the mechanical and hardware components. 
