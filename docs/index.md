@@ -14,6 +14,6 @@ The goal is for the user to be able to identify what type of object their hand i
 # Required Submissions
 
 * [Proposal](proposal.md)
-* [Midterm Checkpoint Presentation Slides](http://)
+* [Midterm Checkpoint Presentation Slides](https://drive.google.com/file/d/1Bj9LehYElW-KokTvbL8jPNXdkbFMn_he/view?usp=sharing)
 * [Final Presentation Slides](http://)
 * [Final Report](report.md)
