@@ -13,7 +13,7 @@ Provide a brief overview of the project objectives, approach, and results.
 
 # 1. Introduction
 
-*** Motivation & Objective:**
+** Motivation & Objective:**
 Globally, there are approximately 284 million people in the visually impaired (VI) community with 39 million among them facing blindness. Navigational difficulties, locating misplaced items, and accessing objects beyond their immediate reach are common challenges a visually impaired encounters.
 Findings show a critical consideration in the design and development of technologies for visually impaired individuals. The preference of VI people in the adoption of such devices depends on factors like affordability, portability, and integration into existing devices.
 - Cost-Effective Solutions: expensive devices are a barrier to widespread technology and a balance between functionality and affordability makes them accessible to a broader range of population.
