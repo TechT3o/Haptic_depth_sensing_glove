@@ -51,6 +51,7 @@ The OV7670 Camera is a low-voltage CMOS device designed to offer the complete fu
 
 We chose this camera since there exists a library for Arduino to read the data from it. We capture images, send them through the serial port, and convert them to PNG in two Python programs. However, the latency of taking a single image of 176 × 144 is about 6 seconds which is not ideal for our use-case.    
 
+Therefore, we switched to the IFWATER USB camera which provided us with a higher frame rate. This camera is embedded with a CMOS OV5640 image sensor, and it directly connects to the laptop. Switching to this camera allowed us to improve the frame rate to 5fps, which is limited by the learning model and not the camera.
 
 ## Depth Estimation
 
