@@ -9,7 +9,9 @@
 
 # Abstract
 
-Provide a brief overview of the project objhectives, approach, and results.
+A Haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them.
+A small camera is mounted on the palm of a visually impaired user and is used to construct a depth map used to perform sensory substituition of vision using a high resolution haptic feedback device comprised of an array of mini DC motor discs with intensity analogous to how close an object is.
+The goal is for the user to be able to do wayfinding and navigate in a room using the device. User studies that examine the usability and quality of the device were done showing that the glove ... .
 
 # 1. Introduction
 
@@ -76,23 +78,23 @@ From the electronic perspective, the vibrating mini motors that we are using for
 
 The mini disk motors require around 100 mA of current in order to rotate at full speed with 5V power. The ESP32 GPIO output pins can provide up to 40 mA, therefore we designed a driver circuit to be able to power the motor using a PWM signal. The circuit shown in Figure 1 was built. It uses an NPN transistor whose base is connected to the GPIO output pin of the ESP32. When the PWM signal gets applied to the base of the transistor the Collector Emitter channel opens and current from the VCC flows through the disk motor and makes it spin with intensity analogous to the PWM signal. The resistor R2 limits the current flowing through the disk motor. A value of 30 Ohms was selected as 5V/30 = 166 mA max current that could flow through R2 ignoring rest of the circuit resistances. R1 was selected to limit the base current. As the base current is very small values of up to 5k could be selected but the chosen value for R1 in this project was 2.2k Ohms. The capacitor is used to soften voltage spikes from the power supply and suppress electrical noise from the motor's rotation and a diode is put to protect against back EMF.
 
-![image](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/c52ca1bd-b7f3-442d-acfb-adf6d63f25e5)
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/c52ca1bd-b7f3-442d-acfb-adf6d63f25e5" alt="drawing" width="200" align="center"/>
 
 *Figure 1: Motor driver circuit*
 
 The PCB of this circuit shown in Figure 2 was made and the Gerber files were sent to [OSHPARK](https://oshpark.com/) for manufacturing.
 
-![image](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/0849f1bc-9bf5-438c-accb-9387e1dbf27c)
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/0849f1bc-9bf5-438c-accb-9387e1dbf27c" alt="drawing" width="200" align="center"/>
 
 *Figure 2: Motor driver PCB*
 
 The received PCBs arrived and the components were soldered on top of it with the disk motors attached to the back of the PCB.
 
-![pcb](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/5368494d-5bee-4cc1-82d2-87d380974121)
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/5368494d-5bee-4cc1-82d2-87d380974121" alt="drawing" width="200" align="center"/>
 
 *Figure 3: PCB*
 
-![assembled_pcbs](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/4977230c-6801-469e-8884-8b859b470c98)
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/4977230c-6801-469e-8884-8b859b470c98" alt="drawing" width="200" align="center"/>
 
 *Figure 4: Soldered circuits*
 
@@ -107,13 +109,19 @@ The location of the camera was another dilemma in our design consideration. As o
 ### Microcontroller
 The microcontroller picked is an ESP32 DevkitC module. It was selected because it is affordable, has the options of wireless connectivity and low power consumption and unlike the Arduino Nano 33 BLE Sense which was the first attempt has no upper limit into how many GPIO pins can provide a PWM signal concurrently. 
 
-*Figure 2: ESP32 module*
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/88ff2443-5617-46f3-9696-089be96f96b0" alt="drawing" width="200" align="center"/>
+
+
+*Figure 5: ESP32 module*
 
 ### Frame
 
-In order to structure the device and mount these electronics a frame was created by gluing wooden popsickles together into the hand like structure shown in Figure. A whole was cut in the middle in order for the wires to pass through and then the motor modules and the camera were hot glued on the wooden skeleton. A rubber band was also hot glued in order to be able to attach the device on the user creating the prototype shown in Figure.
+In order to structure the device and mount these electronics a frame was created by gluing wooden popsickles together into the hand like structure. A whole was cut in the middle in order for the wires to pass through and then the motor modules and the camera were hot glued on the wooden skeleton. A rubber band was also hot glued in order to be able to attach the device on the user creating the prototype shown in Figure 6.
 
-*Figure 2: Skeleton making steps*
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/69f96527-aa2f-44b2-b332-74a325bf75b6" alt="drawing" width="200" align="center"/>
+
+
+*Figure 6: Prototype*
 
 ### Computational Unit (PC)
 
@@ -126,17 +134,22 @@ The software side consisted of the depth estimation algorithm, the serial commun
 ### Depth Estimation
 
 In order to estimate the depth from a mono camera the vision transformer model DPT-Large by Intel was used. This transformer was trained on 1.4 million images for monocular depth estimation and it can predict the relative depth in an image frame. DPT uses the Vision Transformer (ViT) as backbone and adds a neck + head on top for monocular depth estimation.
-A depth video produced with this model is shown in Figure. For this particular application the relative depth works well as we want to make sure that the user can understand which object is closer to them to avoid collision and we are not as interested in the absolute depth value. By reconstructing the point cloud of a depth frame in Figure we see that the scales captured are sensible.
+
+A depth video produced with this model is shown in Figure 7. For this particular application the relative depth works well as we want to make sure that the user can understand which object is closer to them to avoid collision and we are not as interested in the absolute depth value. By reconstructing the point cloud of a depth frame in Figure 8 we see that the scales captured are sensible.
 
 The depth estimation is the bottleneck of this pipeline with inferences taking approximately 160ms when operating in our computing unit and it's performance reduces in challenging or low light conditions.
 
-![depth_test](https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/135776e8-b464-43d5-a2df-3e344ee7d691)
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/135776e8-b464-43d5-a2df-3e344ee7d691" alt="drawing" width="200" align="center"/>
 
-*Figure 5: Mono depth video example*
+*Figure 7: Mono depth video example*
+
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/2aa2a9c4-4d7b-4847-aadd-1fce5db49565" alt="drawing" width="200" align="center"/>
+
+*Figure 8: Point cloud*
 
 ### Intensity mapping
 
-We investigated a mapping technique in order to translate the visual depth information into a PWM value that will control the intensity of the motor. The locations of the motors in a device surface coordinate system is given and is projected on the dimensions of the depth map. Then a window is taken around each pixel value and the average of the depth values is found to avoid extreme erroneous depth values that may result by considering a single pixel. As the motors start to operate with a PWM signal above 70 / 255 objects that are very far away are not considered which works well since we do not want the sensory channel to get oversaturated.
+We investigated a mapping technique in order to translate the visual depth information into a PWM value that will control the intensity of the motor. The locations of the motors in a device surface coordinate system is given and is projected on the dimensions of the depth map. Then a window is taken around each pixel value and the average of the depth values is found to avoid extreme erroneous depth values that may result by considering a single pixel. As the motors start to operate with a PWM signal above 70 / 255, objects that are very far away do not make the motors vibrate which is beneficial as we do not want the sensory channel to get oversaturated.
 
 
 ### Serial Communication
@@ -159,11 +172,25 @@ This prototype was used for the user study but had limitations such as the lengt
 
 In order to evaluate the usability of the glove a user study was performed on 5 not blind or visually impaired users and qualitative and quantitative feedback was gathered. We measure usability by seperating it into five qualitative metrics Learnability, Efficiency, Memorability, Errors and Satisfaction.  
 
-The study consisted of the physical test where participants had to walk the corridor of engineering 4 UCLA building blindfolded in order to test the sensory substitution ability of the device. The path started inside the graduate lounge where the participants had to find the door and exit the room. Then the participants had to move toward the corner and then proceed to the first corridor. The participants then had to walk down the corridor for 10 m where the end of the path was. This path is shown on Figure. The time taken to get to the finish line as well as the number of errors (collisions) was recorded and is shown on Figure.
+The study consisted of the physical test where participants had to walk the corridor of engineering 4 UCLA building blindfolded in order to test the sensory substitution ability of the device. The path started inside the graduate lounge where the participants had to find the door and exit the room. Then the participants had to move toward the corner and then proceed to the first corridor. The participants then had to walk down the corridor for 10 m where the end of the path was. This path is shown on Figure 9. 
 
-After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix and had the questions seperated into these five different metrics with 4 for Learnability, Efficiency, Memorability, Errors and Satisfaction. Then the box plots shown in Figure show that.
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/9193547a-0531-414e-80df-614dae292c88" alt="drawing" width="200" align="center"/>
 
-Observing the comments of the participants while performing the physical task we recorded comments such as "This feels cool", "Interesting" and also comments such as "I can't understand where the object is" and "I can't move my hand without pulling the cables".
+*Figure 9: Navigation path*
+
+The time taken to get to the finish line as well as the number of errors (collisions) was recorded and is shown in Table 1.
+
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/2e97c733-72c0-4fcc-8978-1eda7f81e20c" alt="drawing" width="200" align="center"/>
+
+*Table 1: Path completion times and number of errors / collision*
+
+After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix 1 and had the questions seperated into these five different metrics with 2 for Learnability, 4 for Efficiency, 3 for Memorability, 2 for Errors and 4 for Satisfaction. Then the box plots of the responses of each participant for every metric is shown in Figure 10. 
+
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/faf4ff55-705f-4ff2-8e06-105ff37edbe9" alt="drawing" width="200" align="center"/>
+
+*Figure 10: Questionnaire results box plots for different metrics*
+
+Observing the comments of the participants while performing the physical task we recorded comments such as "This feels cool", "Interesting", "I can't understand where the object is" and "I can't move my hand without pulling the cables".
 
 
 # 5. Discussion and Conclusions
@@ -252,3 +279,7 @@ Observing the comments of the participants while performing the physical task we
 [39] Intel DPT-Large Mono depth estimator
 
 [40] Eagle EDA
+
+# Appendix 1
+
+[depth_glove_form.pdf](https://github.com/TechT3o/Haptic_depth_sensing_glove/files/13643433/depth_glove_form.pdf)
