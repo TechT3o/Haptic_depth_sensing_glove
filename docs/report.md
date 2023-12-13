@@ -170,29 +170,33 @@ This prototype was used for the user study but had limitations such as the lengt
 
 # 4. Evaluation and Results
 
-In order to evaluate the usability of the glove a user study was performed on 5 not blind or visually impaired users and qualitative and quantitative feedback was gathered. We measure usability by seperating it into five qualitative metrics Learnability, Efficiency, Memorability, Errors and Satisfaction.  
+In order to evaluate the usability of the glove a user study was performed on 5 not blind or visually impaired users and qualitative and quantitative feedback was gathered. We measure usability by seperating it into five qualitative metrics Learnability, Efficiency, Memorability, Errors and Satisfaction. A picture of the setup of the user study is shown in Figure 9.
 
-The study consisted of the physical test where participants had to walk the corridor of engineering 4 UCLA building blindfolded in order to test the sensory substitution ability of the device. The path started inside the graduate lounge where the participants had to find the door and exit the room. Then the participants had to move toward the corner and then proceed to the first corridor. The participants then had to walk down the corridor for 10 m where the end of the path was. This path is shown on Figure 9. 
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/f895551d-a54d-4021-b438-50e24b95b994" alt="drawing" width="200" align="center"/>
+
+*Figure 9: User study setup*
+
+The study consisted of the physical test where participants had to walk the corridor of engineering 4 UCLA building blindfolded in order to test the sensory substitution ability of the device. The path started inside the graduate lounge where the participants had to find the door and exit the room. Then the participants had to move toward the corner and then proceed to the first corridor. The participants then had to walk down the corridor for 10 m where the end of the path was. This path is shown on Figure 10. 
 
 <img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/9193547a-0531-414e-80df-614dae292c88" alt="drawing" width="200" align="center"/>
 
-*Figure 9: Navigation path*
+*Figure 10: Navigation path*
 
 The time taken to get to the finish line as well as the number of errors (collisions) was recorded and is shown in Table 1.
 
-<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/2e97c733-72c0-4fcc-8978-1eda7f81e20c" alt="drawing" width="200" align="center"/>
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/2e97c733-72c0-4fcc-8978-1eda7f81e20c" alt="drawing" width="500" align="center"/>
 
 *Table 1: Path completion times and number of errors / collision*
 
-After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix 1 and had the questions seperated into these five different metrics with 2 for Learnability, 4 for Efficiency, 3 for Memorability, 2 for Errors and 4 for Satisfaction. The mean values for each question are foudn in Table 2 and the box plots of the responses of each participant for every metric is shown in Figure 10. 
+After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix 1 and had the questions seperated into these five different metrics with 2 for Learnability, 4 for Efficiency, 3 for Memorability, 2 for Errors and 4 for Satisfaction. The mean values for each question are found in Table 2 and the box plots of the responses of each participant for every metric is shown in Figure 11. 
 
-<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/af4924fb-0dc8-4613-bb7e-6a532a74188b" alt="drawing" width="200" align="center"/>
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/af4924fb-0dc8-4613-bb7e-6a532a74188b" alt="drawing" width="500" align="center"/>
 
 *Table 2: Questionnaire mean value answers for each question*
 
 <img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/faf4ff55-705f-4ff2-8e06-105ff37edbe9" alt="drawing" width="200" align="center"/>
 
-*Figure 10: Questionnaire results box plots for different metrics*
+*Figure 11: Questionnaire results box plots for different metrics*
 
 Observing the comments of the participants while performing the physical task we recorded comments such as "This feels cool", "Interesting", "I can't understand where the object is" and "I can't move my hand without pulling the cables".
 
