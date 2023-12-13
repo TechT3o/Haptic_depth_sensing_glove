@@ -184,7 +184,11 @@ The time taken to get to the finish line as well as the number of errors (collis
 
 *Table 1: Path completion times and number of errors / collision*
 
-After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix 1 and had the questions seperated into these five different metrics with 2 for Learnability, 4 for Efficiency, 3 for Memorability, 2 for Errors and 4 for Satisfaction. Then the box plots of the responses of each participant for every metric is shown in Figure 10. 
+After completing the path the users were given a likert scale questionnaire. The questionnaire is shown in Appendix 1 and had the questions seperated into these five different metrics with 2 for Learnability, 4 for Efficiency, 3 for Memorability, 2 for Errors and 4 for Satisfaction. The mean values for each question are foudn in Table 2 and the box plots of the responses of each participant for every metric is shown in Figure 10. 
+
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/af4924fb-0dc8-4613-bb7e-6a532a74188b" alt="drawing" width="200" align="center"/>
+
+*Table 2: Questionnaire mean value answers for each question*
 
 <img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/faf4ff55-705f-4ff2-8e06-105ff37edbe9" alt="drawing" width="200" align="center"/>
 
@@ -196,7 +200,13 @@ Observing the comments of the participants while performing the physical task we
 # 5. Discussion and Conclusions
 
 
+The user study gave insights about the usability of the device at the current prototype stage.
 
+Concerning the wayfinding efficiency we see that the time taken for the participants to complete the path had a mean of 75.4 seconds (compared to approximately 12 seconds with sense of vision) and standard deviation of 6.7 and the number of errors was 4.4 errors with standard deviation 1.51. We see that the standard deviations of the time and errors are small that shows consistency accross participants and indicates that the learnability of the device was similar between subjects. We see that all participants have at least 3 errors so there is a learning curve in learning to operate the device. The fact that all participants completed the wayfinding path shows the potential of this device to perform sensory substitution for the task of navigating in a closed space. It is worth to be noted that the participants probably already had a mental model of the building so it might have been easier to navigate compared to being subjected to a completely usneen environment. Getting access to one of the relevant devices discussed in section 2 or a white cane to have a comparison metric would be of interest.
+
+Analyzing the results of the questionnaire by drawing box plots for the different usability metrics we can see that the learnability of this device rates the highest as the time and error metrics also suggested and shows that this type of sensory substitution feels intuitive for the users. The second highest metric is memorability that shows that the user's felt confident reusing or teaching other people how to use the device. This gives insight that the device is considered simple to use. Then the Errors, Satisfaction and Efficiency metrics average around the value of 4 which is a neutral stance with small deviation from the median value showing that all users agreed that the device was not satisfactory, not efficient and had errors. By inspecting the answers in Table 2 for these 3 metrics we see that concerning the error there were many difficulties when using the device but it was easy to recover from these mistakes. Concerning Satisfaction they found the activity engaging but would not use this device for wayfinding. And concerning efficiency they found the device easy to use but they couldn't effectively perform wayfinding.
+
+Combining the qualitative feedback we see that we have positive comments such as "This feels cool" and "Interesting" but also negative comments such as "I can't understand where the object is" and "I can't move my hand without pulling the cables" that agrees with the satisfaction, errors and efficiency metrics being in the middle of the likert scale.
 
 # 6. References
 
