@@ -42,7 +42,7 @@ The received PCBs arrived and the components were soldered on top of it with the
 
 <img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/4977230c-6801-469e-8884-8b859b470c98" alt="drawing" width="200" align="center"/>
 
-*Figure 4: Soldered circuits*
+*Figure 4: Soldered circuits and motor coordinates*
 
 ## Camera
 
@@ -92,5 +92,9 @@ The [camera calibration](https://github.com/TechT3o/Haptic_depth_sensing_glove/b
 
 A generic hand shaped frame was formed by gluing together wooden popsickles. Then all the electronics were mounted on top of the frame. The camera and the ESP32 are connected to the laptop through USB ports. The cables controlling the motors are connected to respective digital and analog pins (they both can provide PWM signals) of the ESP32. Lastly the power supply wires are connected to a 5V pwoer supply output and the ground of the power supply and the ESP32 are connected.
 
-By running the [main.py](https://github.com/TechT3o/Haptic_depth_sensing_glove/blob/main/main.py) script we can operate the prototype and a visualziation that shows what the device captures and where the itnensity of each motor is foudn from is shown.
+By running the [main.py](https://github.com/TechT3o/Haptic_depth_sensing_glove/blob/main/main.py) script we can operate the prototype and a visualziation that shows what the device captures and where the intensity of each motor is found from is shown.
+
+<img src="https://github.com/TechT3o/Haptic_depth_sensing_glove/assets/87833804/69f96527-aa2f-44b2-b332-74a325bf75b6" alt="drawing" width="200" align="center"/>
+
+*Figure 6: Prototype*
 
