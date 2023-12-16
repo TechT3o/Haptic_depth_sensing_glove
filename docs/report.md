@@ -11,19 +11,33 @@
 
 A Haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3d space around them.
 A small camera is mounted on the palm of a visually impaired user and is used to construct a depth map used to perform sensory substituition of vision using a high resolution haptic feedback device comprised of an array of mini DC motor discs with intensity analogous to how close an object is.
-The goal is for the user to be able to do wayfinding and navigate in a room using the device. User studies that examine the usability and quality of the device were done showing that the glove ... .
+The goal is for the user to be able to do wayfinding and navigate in a room using the device. User studies that examine the usability and quality of the device were done showing that the glove is easy to use, feels intuitive and engaging and is a suitable technique for sensory substitution of vision but was prone to errors, was not efficient and would not be recommended in the current stage to be used as a complete wayfinding solution.
 
 # 1. Introduction
 
-This section should cover the following items:
+About 284 million people are visually impaired (VI) worldwide and of these, 39 million of them are blind. Common problems that VI people face are the difficulty in navigating / finding their way in the environment, losing objects that are misplaced on surfaces, or identifying and fetching objects around them that are further away from their grasp.
 
-* Motivation & Objective: What are you trying to do and why? (plain English without jargon)
-* State of the Art & Its Limitations: How is it done today, and what are the limits of current practice?
-* Novelty & Rationale: What is new in your approach and why do you think it will be successful?
-* Potential Impact: If the project is successful, what difference will it make, both technically and broadly?
-* Challenges: What are the challenges and risks?
-* Requirements for Success: What skills and resources are necessary to perform the project?
-* Metrics of Success: What are metrics by which you would check for success?
+In this project a haptic feedback glove device that uses a motor camera and mini motor disks to help visually impaired people understand the 3D space around them is built. The idea is to mount a small camera on the palm of the visually impaired user, construct the depth map, and perform sensory substitution of vision by using a high-resolution haptic feedback glove comprised of an array of mini DC motor disks to assign a different intensity in the direction where the user's hand is pointing at, analogous to how close the object is. The goal is for the user to be able to identify what type of object their hand is pointing at for object recognition and object fetching and for the user to be able to do wayfinding and navigate in a room using the device.
+
+There are multiple different approaches that have been performed for sensory substitution of vision to aid VI people in performing multiple different tasks and with multiple different technologies. The technologies that rely on audio feedback have the limitations of overloading the sensory channel and are slow to transmit environmental information to the user. Smartphones, tablets, canes, smartwatches, belts, wristbands, and sleeves can transmit a limited amount of information and can't directly provide the 3D space information but require an encoding of this information that is difficult for the user to learn. Resonating pin arrays and sonar arrays require expensive, bulky, and not portable equipment.
+
+Our proposed solution belongs to the family of gloves with motors and aims to tackle the problems of object fetching and wayfinding by allowing for cheap, portable, easy to learn, direct and low-latency feedback of the 3D space without sensory overload. Relative depth information can be extracted from a mono camera using neural networks Sensory substitution can be performed with vibrotactile motor arrays. Shapes, faces and objects can be recognized using motor arrays.
+Therefore, it should be feasible to combine this research and construct a haptic depth sensing glove that can perform sensory substitution and explore its effectiveness and usability for the tasks of object fetching and wayfinding.
+
+There are multiple applications for such a device and multiple people can benefit from it. Visually impaired people will now have an alternative to navigate in new environments resulting in greater mobility and quality of life and they will have a way to recognize and fetch objects making them more self-reliant and solving the problem of lost objects. Therefore such a device could practically improve the quality of life of the visually impaired community, let them become more self-reliant, more easily navigate to new places, and alleviate pressure from their caregivers.
+With the rise of Virtual Reality headsets and Augmented Reality applications, there is an active research field and a need to develop ubiquitous haptic feedback devices to help a user interact with the virtual world. This glove could be used to address this need and provide haptic feedback such as for button pressing or touching and recognizing virtual objects tasks frequently encountered in Human-Computer Interaction.
+
+Some challenges in the design of this device include:
+
+- Achieving depth estimation with good enough resolution to understand relative distances between camera objects
+- Achieving real-time performance so that there is no latency between where the user is pointing and the perceived haptic feedback
+- Achieving good enough haptic resolution with the motor array for the user to recognize different objects and perform wayfinding
+
+but with good Python skills to make a running backend that can collect camera information, find the depth, and determine the mapping and intensities of the motors,
+with C++ skills to program the ESP32 microcontroller to communicate with the Python backend, and to control the intensities of each motor, with Electronic circuit design and soldering skills to connect the motors and camera to the microcontroller and to create the motor driver circuit and PCBs and with hands-on skills to put the glove together the project is feasible.
+
+A user study was conducted with the goal of evaluating the usability seperated in 5 metrics (Learnability, Efficiency, Memorability, Errors, Satisfaction) of the device for wayfinding by considering quantitative metrics such as the ability of participants to finish the path, the time taken to complete the path and qualitative such as a likert scale questionnaire and recording the comments of the users.
+
 
 # 2. Related Work
 
@@ -203,6 +217,7 @@ Observing the comments of the participants while performing the physical task we
 
 # 5. Discussion and Conclusions
 
+## Discussion
 
 The user study gave insights about the usability of the device at the current prototype stage.
 
@@ -211,6 +226,12 @@ Concerning the wayfinding efficiency we see that the time taken for the particip
 Analyzing the results of the questionnaire by drawing box plots for the different usability metrics we can see that the learnability of this device rates the highest as the time and error metrics also suggested and shows that this type of sensory substitution feels intuitive for the users. The second highest metric is memorability that shows that the user's felt confident reusing or teaching other people how to use the device. This gives insight that the device is considered simple to use. Then the Errors, Satisfaction and Efficiency metrics average around the value of 4 which is a neutral stance with small deviation from the median value showing that all users agreed that the device was not satisfactory, not efficient and had errors. By inspecting the answers in Table 2 for these 3 metrics we see that concerning the error there were many difficulties when using the device but it was easy to recover from these mistakes. Concerning Satisfaction they found the activity engaging but would not use this device for wayfinding. And concerning efficiency they found the device easy to use but they couldn't effectively perform wayfinding.
 
 Combining the qualitative feedback we see that we have positive comments such as "This feels cool" and "Interesting" but also negative comments such as "I can't understand where the object is" and "I can't move my hand without pulling the cables" that agrees with the satisfaction, errors and efficiency metrics being in the middle of the likert scale.
+
+Analyzing this feedback it is understandable that a wireless version of the glove that does not use a power cord that obstructs the movement of the users should be used as this would allow for the users to move without having somebody drag a chair with the circuits and computational unit connected along them hindering their speed and range of motion. Also the resolution of the motor array was not enough to understand the shape of the object the device was pointing at so increasing the resolution is also a future step. In the user study, the participants were UCLA students that might have been familiar with the layout of the Engineering IV building and have already had developed a mental model of the path making the result of the path unreliable. Other future work should include user studies with more participants participants that follow a path in a completely new and unseen envronment, they should ideally be visually impaired in order to get more representative feedback and a baseline such as the other approaches mentioned in Section 2 or a white cane should be used to compare our approach.
+
+## Conclusion
+
+A functional real time operating prototype device that combined the software and hardware parts to perform sensory substitution of vision into haptic feedback was developed. Then the results of the user study concluded that the device could be used to perform sensory substitution and was easy to use but did not have enough resolution to udnerstand the shape of the objects and was deemed as unsatisfactoy, inefficient and error prone for the task of wayfinding. Future work includes optimizing the prototype with the feedback collected (e.g. making it wireless) and conducting a larger scale user study with visually impaired people while having a baseline sensory substitution method for comparison.
 
 # 6. References
 
