@@ -5,7 +5,7 @@ transmits these intensities serially to the microcontroller. It also receives a 
 to debug serial connection.
 Motor coordinates is a list of tuples that has the (y,x) positions of the motors in a coordinate system
 Window size is the window over which depth values are averaged
-Com port is the com port where teh microcontroller is connected
+Com port is the com port where the microcontroller is connected
 """
 
 import cv2

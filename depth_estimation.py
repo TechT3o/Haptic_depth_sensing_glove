@@ -3,13 +3,13 @@ import torch
 import cv2
 import numpy as np
 from typing import Tuple
+import time
 
 
 class MonoDepthEstimator:
     def __init__(self):
         self.processor = DPTImageProcessor.from_pretrained("Intel/dpt-large", low_cpu_mem_usage=True)
         self.model = DPTForDepthEstimation.from_pretrained("Intel/dpt-large")
-        print(torch.cuda.is_available())
         self.computing_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model.to(self.computing_device)
         self.video_capture = cv2.VideoCapture(0)
@@ -52,6 +52,7 @@ class MonoDepthEstimator:
         # video_capture = cv2.VideoCapture(0)
         print("Starting live capture. Press s to stop")
         while True:
+            start_time = time.time()
             ret, frame = self.video_capture.read()
             frame = cv2.resize(frame, (640, 480))
 
@@ -65,7 +66,7 @@ class MonoDepthEstimator:
                 np.save("depth.npy", depth)
 
             cv2.imshow('depth', depth)
-
+            print(1/(time.time()-start_time))
             # Stop loop if "s" is pressed
             if cv2.waitKey(1) == ord("s"):
                 break
